@@ -50,4 +50,12 @@ Route::group(['prefix' => 'category'],function(){
    Route::get('index','CategoryController@index');
    Route::any('add','CategoryController@addData');
    Route::any('upd','CategoryController@updData');
+   Route::any('del','CategoryController@delData');
+});
+//品牌管理
+Route::group(['prefix' => 'brand'],function(){
+   Route::get('index','BrandController@index');
+   Route::any('add','BrandController@addData');
+   Route::any('upd','BrandController@updData');
+   Route::any('del','BrandController@delData');
 });

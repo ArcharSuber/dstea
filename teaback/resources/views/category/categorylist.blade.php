@@ -11,6 +11,7 @@
        当前位置： 分类列表 > <a href="{{url('category/add')}}">分类添加</a>
      </dl>
    </div>
+   
    <form class="am-form am-g">
      <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped am-table-hover">
        <thead>
@@ -31,7 +32,8 @@
            <td><div class="am-btn-toolbar">
                <div class="am-btn-group am-btn-group-xs">
                <a class="am-btn am-btn-default am-btn-xs am-text-success am-round am-icon-file" data-am-modal="{target: '#my-popups'}" href="{{url('category/upd?category_id=').$cate->category_id}}" title="添加子栏目"></a>
-                 <button class="am-btn am-btn-default am-btn-xs am-text-danger am-round"  title="删除"><span class="am-icon-trash-o"></span></button>
+                 <a href="{{url('category/del?category_id=').$cate->category_id}}" class="am-btn am-btn-default am-btn-xs am-text-danger am-round" title="删除">删除</a>
+                 
                </div>
              </div></td>
          </tr>

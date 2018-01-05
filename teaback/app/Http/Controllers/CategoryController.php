@@ -32,25 +32,54 @@ class CategoryController extends Controller
     //修改数据
     public function updData(Request $request){
     	$cate = new Category;
-        $category=$cate->data();
-    	$id=$request->input('category_id');
+        $id=$request->input('category_id');
+        $category=$cate->data($id);
+        //var_dump($category);die;
+        try{
+            if(!isset($id)){
+                 throw new \Exception("参数传递非法");
+            }
+        }catch(\Exception $e){
+              die($e->getMessage());
+        }
     	$cateone=$cate->find($id);
     	if($request->isMethod('POST')){
 	    	$this->validate(request(),[
 	            'category_name' => 'required|string|max:20|min:1',
 
 	        ]);
-	        // $category_id=$request->input('category_id');
-	        // $parent_id=$request->input('parent_id');
-        	// $category_name=$request->input('category_name');
+	        
         	$cateupd = $cate->find($request->input('category_id'));
             $cateupd->category_name = $request->input('category_name');
             $cateupd->parent_id = $request->input('parent_id');
             $res=$cateupd->save();   //返回bool
-            var_dump($res);die;
+            if($res){
+                return redirect("category/index");
+            }
 
         }
     	return view('category.categoryupd',compact('cateone','category'));
+    }
+    //删除数据
+    public function delData(Request $request){
+        $cate = new Category;
+        $id=$request->input('category_id');
+        $res=$cate->where(['parent_id'=>$id])->count();
+        try{
+            if($res>0){
+                 throw new \Exception("该分类下还有分类不能删除");
+            }
+        }catch(\Exception $e){
+              die($e->getMessage());
+        }
+        if($cate->find($id)->delete()){
+            //删除成功
+             return redirect("category/index");
+        }else{
+            //删除失败
+             return redirect("category/index");
+        }
+       
     }
    
 }

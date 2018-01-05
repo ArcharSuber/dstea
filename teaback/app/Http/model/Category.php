@@ -15,23 +15,23 @@ class Category extends Model{
      public $timestamps = false;
 
      //查询所有parent_id=0
-     public function data(){
+     public function data($noCat=0){
          $data = $this->get();
-         $catLevel = $this->getCateLevel($data);
+         $catLevel = $this->getCateLevel($data,$noCat);
          return $catLevel;
      }
      //递归组装数据
-     public function getCateLevel($data,$pid=0,$level=1){
+     public function getCateLevel($data,$noCat=0,$pid=0,$level=1){
             static $catList = [];
             foreach($data as $key=>$val){
-                  if($val['parent_id'] == $pid){
+                  if($val['parent_id'] == $pid && $val['category_id'] !=$noCat){
                   	    $val['level'] = $level;
                         $catList[] = $val;
-                        $this->getCateLevel($data,$val['category_id'],$level+1);
+                        $this->getCateLevel($data,$noCat,$val['category_id'],$level+1);
                   }
             }
             return $catList;
      }
-
+     
     
 }

@@ -14,6 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Amaze UI" />
 <link rel="stylesheet" href="{{ url('/') }}/css/amazeui.min.css"/>
 <link rel="stylesheet" href="{{ url('/') }}/css/admin.css">
+<link rel="stylesheet" href="{{ url('/') }}/css/page.css">
 <script src="{{ url('/') }}/js/jquery.min.js"></script>
 <script src="{{ url('/') }}/js/app.js"></script>
 </head>

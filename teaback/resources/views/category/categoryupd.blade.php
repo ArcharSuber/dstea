@@ -12,6 +12,7 @@
     <div class="fbneirong">
       <form class="am-form" action="{{url('category/upd')}}" method="post">
       	{{csrf_field()}}
+       
         <div class="am-form-group am-cf">
         	<input type="hidden" name="category_id" value="{{$cateone->category_id}}">
           <div class="zuo">分类名称:</div>
