@@ -19,7 +19,7 @@ class BrandController extends Controller
                    'brand_name' => 'required|string|max:20|min:1',
                    'brand_url' =>'required'
              ]); 
-    		  $file = $request->file('brand_logo');
+    		      $file = $request->file('brand_logo');
               $brand_logo=Brand::uploads($file);
               if($brand_logo){
                   $res=Brand::add($request,$brand_logo); 

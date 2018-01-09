@@ -37,12 +37,27 @@ Route::get('/index',function(){
     return view('index');
 });
 //Route::any('/index','IndexController@index');
-//产品管理路由
+//商品管理路由
+Route::group(['prefix' => 'goods'],function(){
+   Route::any('index','GoodsController@index');
+   Route::any('add','GoodsController@addData');
+   Route::any('del','GoodsController@del');
+   Route::any('upd','GoodsController@upd');
+});
+//商品属性管理
+Route::group(['prefix' => 'goodsattr'],function(){
+   Route::any('index','GoodsattrController@index');
+   Route::any('add','GoodsattrController@addData');
+   Route::any('inserts','GoodsattrController@inserts');
+   // Route::any('del','GoodsattrController@del');
+   // Route::any('upd','GoodsattrController@upd');
+});
+//产品管理
 Route::group(['prefix' => 'product'],function(){
-   Route::get('index','ProductController@index');
-   Route::match(['get','post'],'increase','ProductController@increase');
-   Route::get('delete','ProductController@delete');
-   Route::match(['get','post'],'alter','ProductController@alter');
+   Route::any('index','ProductController@index');
+   Route::any('add','ProductController@addData');
+   Route::any('del','ProductController@del');
+   Route::any('upd','ProductController@upd');
 });
 
 //分类管理路由
@@ -58,4 +73,19 @@ Route::group(['prefix' => 'brand'],function(){
    Route::any('add','BrandController@addData');
    Route::any('upd','BrandController@updData');
    Route::any('del','BrandController@delData');
+});
+//商品类型与属性管理
+Route::group(['prefix' => 'attrtype'],function(){
+	 //商品类型
+     Route::any('typeadd','TypeController@addData');
+     //商品列表
+     Route::any('typeindex','TypeController@index');
+     Route::any('typeupd','TypeController@upd');
+     Route::any('typedel','TypeController@del');
+     //商品属性
+     Route::any('attradd','AttrController@addData');
+     //商品属性列表
+     Route::any('attrindex','AttrController@index');
+     Route::any('attrupd','AttrController@upd');
+     Route::any('attrdel','AttrController@del');
 });

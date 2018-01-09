@@ -11,6 +11,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="icon" type="image/png" href="{{ url('/') }}/i/favicon.png">
 <link rel="apple-touch-icon-precomposed" href="{{ url('/') }}/i/app-icon72x72@2x.png">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <meta name="apple-mobile-web-app-title" content="Amaze UI" />
 <link rel="stylesheet" href="{{ url('/') }}/css/amazeui.min.css"/>
 <link rel="stylesheet" href="{{ url('/') }}/css/admin.css">

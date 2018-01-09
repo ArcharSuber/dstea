@@ -3,9 +3,9 @@
 @section('content')
 <div class="admin-biaogelist">
     <div class="listbiaoti am-cf">
-      <ul class="am-icon-flag on"> 栏目名称</ul>
+      <ul class="am-icon-flag on"> 产品管理</ul>
 
-      <dl class="am-icon-home" style="float: right;"> 当前位置： 首页 > <a href="#">商品列表</a></dl>
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 产品列表 > <a href="{{url('product/add')}}">产品添加</a></dl>
 
       <dl>
         <button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"> <a href="{{ url('product/increase') }}">添加产品</a></button>

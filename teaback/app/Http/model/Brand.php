@@ -49,6 +49,12 @@ class Brand extends Model{
         	 return $res;
 
      }
+
+     //查询所有品牌信息
+     public static function alldata(){
+            $data=self::get();
+            return $data;
+     }
      
 
  }
