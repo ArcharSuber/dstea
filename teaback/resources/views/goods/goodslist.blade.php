@@ -46,7 +46,7 @@
                 <th>热卖</th>
                 <th>上下架</th>
                 <th>限时</th>
-                <th width="220px">操作</th>
+                <th width="280px">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -85,6 +85,7 @@
                     <div class="am-btn-group am-btn-group-xs">
                        <a href="{{url('goodsattr/add')}}?goods_id={{$good->goods_id}}" class="am-btn am-btn-default am-btn-xs am-text-success am-round">属性</a>
                        <a href="{{url('product/add')}}?goods_id={{$good->goods_id}}&goods_sn={{$good->goods_sn}}&goods_name={{$good->goods_name}}" class="am-btn am-btn-default am-btn-xs am-text-success am-round">产品</a>
+                       <a href="{{url('goods/picture')}}?goods_id={{$good->goods_id}}" class="am-btn am-btn-default am-btn-xs am-text-success am-round">图片</a>
                        <a href="" class="am-btn am-btn-default am-btn-xs am-text-success am-round">删除</a>
                        <a href="" class="am-btn am-btn-default am-btn-xs am-text-success am-round">修改</a>
                     </div>

@@ -43,6 +43,7 @@ Route::group(['prefix' => 'goods'],function(){
    Route::any('add','GoodsController@addData');
    Route::any('del','GoodsController@del');
    Route::any('upd','GoodsController@upd');
+   Route::any('picture','GoodsController@uploads');
 });
 //商品属性管理
 Route::group(['prefix' => 'goodsattr'],function(){
